@@ -2,6 +2,9 @@
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
 import java.io.File
+import kotlin.io.path.Path
+import kotlin.io.path.createFile
+import kotlin.io.path.writeText
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
@@ -15,6 +18,48 @@ private fun getInputFile(): File {
     return if (file.readText().isBlank()) {
         File("src/main/kotlin/day$day/input1.txt")
     } else file
+}
+
+fun main() {
+    println("Writing files")
+    writeTestFiles()
+}
+fun writeTestFiles() {
+    (2..25).forEach {
+        val day = it.toString().padStart(2, '0')
+        val codeFile = File("src/main/kotlin/day$day/Day${it}_test.kt")
+        println("Fetched code file")
+        val inputFile = File("src/main/kotlin/day$day/inputtest.txt")
+        println("Fetched input file")
+
+        codeFile.writeText(
+            """
+                import solve
+
+                fun part1Test(): Int? {
+                    TODO()
+                }
+
+                fun part2Test(): Int? {
+                    TODO()
+                }
+
+                fun main() = solve { lines ->
+                    val input = lines
+                    val part1Expected = TODO()
+                    val part2Expected = TODO()
+                    val part1Actual = part1Test(input)
+                    val part2Actual = part2Test(input)
+
+                    assert(part1Expected == part1Actual)
+                    assert(part2Expected == part2Actual)
+
+                    true
+                }
+            """.trimIndent()
+        )
+        inputFile.writeText("")
+    }
 }
 
 private fun getInput(): String {
