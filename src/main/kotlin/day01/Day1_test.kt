@@ -4,7 +4,7 @@ import solve
 
 fun part1Test(elves: List<CalorieElf>): Int? {
     val bestFedElf = elves.maxByOrNull { it.totalCalories }
-g
+
     return bestFedElf?.totalCalories
 }
 
