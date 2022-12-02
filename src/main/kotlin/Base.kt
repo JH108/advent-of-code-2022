@@ -43,8 +43,8 @@ fun writeTestFiles() {
 
                 fun main() = solve { lines ->
                     val input = lines
-                    val part1Expected = TODO()
-                    val part2Expected = TODO()
+                    val part1Expected = 1
+                    val part2Expected = 1
                     val part1Actual = part1Test(input)
                     val part2Actual = part2Test(input)
 
