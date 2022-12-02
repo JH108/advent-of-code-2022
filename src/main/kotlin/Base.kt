@@ -50,10 +50,10 @@ fun writeTestFiles() {
                     val part1Actual = part1Test(input)
                     val part2Actual = part2Test(input)
 
-                    assert(part1Expected == part1Actual)
-                    assert(part2Expected == part2Actual)
-
-                    true
+                    println("part1Expected == part1Actual: ${'$'}{part1Expected == part1Actual}")
+                    println("part2Expected == part2Actual: ${'$'}{part2Expected == part2Actual}")
+                
+                    part1Expected == part1Actual && part2Expected == part2Actual
                 }
             """.trimIndent()
         )
