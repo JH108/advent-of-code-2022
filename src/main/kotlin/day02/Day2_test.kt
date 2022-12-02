@@ -9,18 +9,20 @@ private fun part1Test(lines: List<String>): Int {
 }
 
 private fun part2Test(lines: List<String>): Int {
-    return 3
+    val rounds = lines.toStrategicRounds()
+
+    return rounds.sumOf { it.score }
 }
 
 fun main() = solve { lines ->
     val input = lines
     val part1Expected = 15
-    val part2Expected = 1
+    val part2Expected = 12
     val part1Actual = part1Test(input)
     val part2Actual = part2Test(input)
 
-    assert(part1Expected == part1Actual)
-    assert(part2Expected == part2Actual)
+    println("part1Expected == part1Actual: ${part1Expected == part1Actual}")
+    println("part2Expected == part2Actual: ${part2Expected == part2Actual}")
 
-    true
+    part1Expected == part1Actual && part2Expected == part2Actual
 }
