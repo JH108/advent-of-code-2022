@@ -1,3 +1,5 @@
+package day20
+
 import solve
 
 private fun part1Test(lines: List<String>): Int? {
