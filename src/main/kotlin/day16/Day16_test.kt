@@ -17,8 +17,8 @@ fun main() = solve { lines ->
     val part1Actual = part1Test(input)
     val part2Actual = part2Test(input)
 
-    assert(part1Expected == part1Actual)
-    assert(part2Expected == part2Actual)
+    println("part1Expected == part1Actual: ${part1Expected == part1Actual}")
+    println("part2Expected == part2Actual: ${part2Expected == part2Actual}")
 
-    true
+    part1Expected == part1Actual && part2Expected == part2Actual
 }
