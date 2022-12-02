@@ -22,7 +22,7 @@ fun main() {
     writeTestFiles()
 }
 fun writeTestFiles() {
-    (2..25).forEach {
+    (3..25).forEach {
         val day = it.toString().padStart(2, '0')
         val codeFile = File("src/main/kotlin/day$day/Day${it}_test.kt")
         println("Fetched code file")
@@ -31,6 +31,8 @@ fun writeTestFiles() {
 
         codeFile.writeText(
             """
+                package day$day
+                
                 import solve
 
                 private fun part1Test(lines: List<String>): Int? {
