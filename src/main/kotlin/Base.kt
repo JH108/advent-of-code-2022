@@ -2,9 +2,6 @@
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
 import java.io.File
-import kotlin.io.path.Path
-import kotlin.io.path.createFile
-import kotlin.io.path.writeText
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
@@ -36,11 +33,11 @@ fun writeTestFiles() {
             """
                 import solve
 
-                fun part1Test(): Int? {
+                private fun part1Test(): Int? {
                     TODO()
                 }
 
-                fun part2Test(): Int? {
+                private fun part2Test(): Int? {
                     TODO()
                 }
 
