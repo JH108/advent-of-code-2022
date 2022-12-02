@@ -33,11 +33,11 @@ fun writeTestFiles() {
             """
                 import solve
 
-                private fun part1Test(): Int? {
+                private fun part1Test(lines: List<String>): Int? {
                     TODO()
                 }
 
-                private fun part2Test(): Int? {
+                private fun part2Test(lines: List<String>): Int? {
                     TODO()
                 }
 
