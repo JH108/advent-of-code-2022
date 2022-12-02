@@ -4,7 +4,7 @@ import solve
 
 fun main() = solve { lines ->
     val elves = lines.buildElves()
-    val bestFedElf = elves.maxByOrNull { it.totalCalories }
+    val topThreeElves = elves.sortedByDescending { it.totalCalories }.take(3)
 
-    bestFedElf?.totalCalories
+    topThreeElves.sumOf { it.totalCalories }
 }

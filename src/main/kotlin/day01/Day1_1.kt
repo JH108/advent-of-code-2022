@@ -37,6 +37,12 @@ fun List<String>.buildElves(): List<CalorieElf> {
             }
             currentElf = null
         }
+
+        if (position == this.lastIndex) {
+            currentElf?.run {
+                elves = elves + this
+            }
+        }
     }
 
     return elves
