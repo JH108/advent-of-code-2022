@@ -3,7 +3,14 @@ package day03
 import solve
 
 private fun part1Test(lines: List<String>): Int? {
-    TODO()
+    val rucksacks = lines.map {
+        val firstHalf = it.take(it.length / 2)
+        val secondHalf = it.takeLast(it.length / 2)
+        println("First: $firstHalf")
+        println("Second: $secondHalf")
+    }
+    println(rucksacks)
+    return 1
 }
 
 private fun part2Test(lines: List<String>): Int? {
@@ -15,10 +22,10 @@ fun main() = solve { lines ->
     val part1Expected = 1
     val part2Expected = 1
     val part1Actual = part1Test(input)
-    val part2Actual = part2Test(input)
+//    val part2Actual = part2Test(input)
 
     println("part1Expected == part1Actual: ${part1Expected == part1Actual}")
-    println("part2Expected == part2Actual: ${part2Expected == part2Actual}")
+//    println("part2Expected == part2Actual: ${part2Expected == part2Actual}")
 
-    part1Expected == part1Actual && part2Expected == part2Actual
+    part1Expected == part1Actual// && part2Expected == part2Actual
 }
